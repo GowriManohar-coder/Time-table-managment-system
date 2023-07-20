@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("----Time Table-----");
+		System.out.println("----Time Table Managment System-----");
 		TimeTable tt = new TimeTable();
 		tt.dataentry();
 
