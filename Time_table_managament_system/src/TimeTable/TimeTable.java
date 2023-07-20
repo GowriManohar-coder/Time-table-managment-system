@@ -9,21 +9,19 @@ import java.util.Scanner;
 public class TimeTable {
 	String day, name, p1, p2, p3, p4, p5, p6, p7;
 	String[] department = { "CSE", "MECH", "ECE", "EEE", "Civil" };
-	private Scanner Scan = new Scanner(System.in);
+	String[] year = {"first", "second", "third","fourth"};
+	Scanner Scan = new Scanner(System.in);
 
 	public void dataentry() {
 		System.out.println("Enter no of departments ");
 		int dept = Scan.nextInt();
 		for (int i = 0; i < dept; i++) {
 			Scan.nextLine();
-			System.out.println("Department " + i + 1 + " Name in CSE, MECH, ECE, EEE, Civil Format");
+			System.out.println("Department " + (i + 1) + " Name in CSE, MECH, ECE, EEE, Civil Format");
 			String n = Scan.nextLine();
-			name = n.toUpperCase();
-			System.out.println(name + " Department Data Entry");
-			System.out.println("Enter no of sections");
-			int sec = Scan.nextInt();
-			for (int k = 1; k <= sec; k++) {
-				System.out.println(name + " Department section "+k+" Data Entry");
+			name = n.toLowerCase();
+			for (int k = 0; k < 4; k++) {
+				System.out.println(name + " Department "+year[k]+" year Data Entry");
 				System.out.println("Enter no of days");
 				int days = Scan.nextInt();
 				for (int j = 1; j <= days; j++) {
@@ -48,13 +46,13 @@ public class TimeTable {
 					try {
 						Class.forName("com.mysql.cj.jdbc.Driver");
 						System.out.println("driver found successful");
-						String url = "jdbc:mysql://localhost:3306/manohar";
+						String url = "jdbc:mysql://localhost:3306/timetable";
 						String username = "root";
 						String password = "root";
 						Connection con;
 						con = DriverManager.getConnection(url, username, password);
 						System.out.println("connected with database successfully");
-							String query = "insert into " +department[i]+"_"+sec+" values(?,?,?,?,?,?,?,?)";
+							String query = "insert into " +department[i]+"_"+year[i]+"year values(?,?,?,?,?,?,?,?)";
 							PreparedStatement st = con.prepareStatement(query);
 							st.setString(1, day);
 							st.setString(2, p1);
