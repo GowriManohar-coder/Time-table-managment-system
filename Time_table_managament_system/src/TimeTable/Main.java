@@ -13,10 +13,10 @@ public class Main {
 		System.out.println("----Time Table Managment System-----");
 		TimeTable tt = new TimeTable();
 		Retrieve rr = new Retrieve();
-		//tt.dataentry();
-		System.out.println("Enter which Time Table you Requried in 'cse_firstyear' format");
+		tt.dataentry();
+		/*System.out.println("Enter which Time Table you Requried in 'cse_firstyear' format");
 		String n = Scan.nextLine();
-		rr.retrieve(n);
+		rr.retrieve(n);*/
 		
 
 	}

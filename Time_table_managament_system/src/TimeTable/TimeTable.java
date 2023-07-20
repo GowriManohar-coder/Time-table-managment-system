@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 public class TimeTable {
 	String day, name, p1, p2, p3, p4, p5, p6, p7;
-	String[] department = { "CSE", "MECH", "ECE", "EEE", "Civil" };
 	String[] year = {"first", "second", "third","fourth"};
 	Scanner Scan = new Scanner(System.in);
 
@@ -52,7 +51,7 @@ public class TimeTable {
 						Connection con;
 						con = DriverManager.getConnection(url, username, password);
 						System.out.println("connected with database successfully");
-							String query = "insert into " +department[i]+"_"+year[i]+"year values(?,?,?,?,?,?,?,?)";
+							String query = "insert into " +n+"_"+year[i]+"year values(?,?,?,?,?,?,?,?)";
 							PreparedStatement st = con.prepareStatement(query);
 							st.setString(1, day);
 							st.setString(2, p1);
